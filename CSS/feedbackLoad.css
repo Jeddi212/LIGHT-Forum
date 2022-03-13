@@ -1,0 +1,19 @@
+feedback {
+	color: white;
+	line-height: 30px;
+	padding: 10px;
+}
+username {
+	padding: 10px;
+	border: 1px solid orange;
+	display: block;
+	font-weight: bold;
+}
+date {
+	padding: 10px;
+	display: block;
+}
+words {
+	padding: 10px;
+	display: block;
+}

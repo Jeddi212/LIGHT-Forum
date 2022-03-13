@@ -1,0 +1,82 @@
+@font-face {
+	font-family: 'hunt';
+	src: url("../FONT/Hunt.ttf");
+}
+@font-face {
+	font-family: 'leixo';
+	src: url("../FONT/Leixo.ttf");
+}
+@font-face {
+	font-family: 'alte';
+	src: url("../FONT/Alte.ttf");
+}
+@font-face {
+	font-family: 'azo';
+	src: url("../FONT/Azonix.otf");
+}
+@font-face {
+	font-family: 'king';
+	src: url("../FONT/King.ttf");
+}
+@font-face {
+	font-family: 'calc';
+	src: url("../FONT/Calculator.ttf");
+}
+@font-face {
+	font-family: 'pixel';
+	src: url("../FONT/LLPIXEL3.ttf");
+}
+@font-face {
+	font-family: 'digital';
+	src: url("../FONT/Digital.ttf");
+}
+@font-face {
+	font-family: 'niteclub';
+	src: url("../FONT/Niteclub.otf");
+}
+@font-face {
+	font-family: 'blacklisted';
+	src: url("../FONT/Blacklisted.ttf");
+}
+@font-face{
+	font-family: HH;
+	src: url(../FONT/HAMMERHEAD.ttf);
+}
+* {
+	transition: 0.5s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+nav {
+	font-size: 20px;
+	font-family: 'azo';
+}
+a {
+	text-decoration: none;
+}
+span a:hover {
+	color: #fed345;
+}
+
+/* Scroll Bar Styling */
+::-webkit-scrollbar {
+	width: 7px;
+}
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb {
+	background-image: linear-gradient(45deg, #06dee1, #79ff6c);
+	border-radius: 6px;
+}
+
+/* Footer Div */
+.footer {
+	color: #fff;
+	padding-top: 30px;
+	font-family: 'niteclub';
+	text-align: center;
+	line-height: 1px;
+}

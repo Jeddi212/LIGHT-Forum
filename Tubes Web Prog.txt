@@ -1,0 +1,102 @@
+Tubes Web Prog
+
+Nama Kelompok:
+Alexander Hansen (1119013)
+Lucky Setiawan   (1119021)
+Jedediah Fanuel  (1119023)
+Fedly Septian    (1119033)
+
+Note: 
+Database dan tabel dibuat menggunakan persiapan_db.php, run file ini 1x sebelum membuka web untuk pertama kali.
+Import light_db.sql pada database untuk memasukkan data dummy.
+
+Bagian/fungsi yang ditambah:
+(Perbaikan, akan mengecek username dan email, jika sudah digunakan orang lain, maka tidak bisa digunakan lagi).
+(Comment akan dirapikan tampilannya, juga akan diubah cara penyimpanannya, dari 1 file txt per game menjadi 1 file txt per comment).
+Melengkapi menu pada admin. Seperti perubahan pada cara mendelete comment, dan fitur fitur admin lainnya.
+Perbaikan form donasi (lakukan validasi, meminimalkan inputan yang tidak perlu)
+Perbaikan form merchandise (lakukan validasi, meminimalkan inputan user, cek stok jika stok merchandise habis)
+Perbaikan di php merchandise (ambil file foto dari database, id barang di hidden)
+
+job des dari setiap anggota kelompok:
+
+Alexander Hansen
+Proposal
+Kontak:
+mengambil data dari database untuk menampilkan email admin dari website menggunakan looping.
+Feedback:
+Menggunakan file XML untuk menambahkan feedback yang diberikan oleh user lalu diload menggunakan AJAX agar saat admin membuka juga dapat terus melihat feedback baru yang masuk.penambahan di dalam file XML dilakukan,pertama dengan melakukan $xml = simplexml_load_file untuk membuka file XML,kemudian $root = $xml->rootname untuk memilih root yang ada didalam file XML,kemudian menyimpan nama node dengan $node = $root->addChild(‘nodename’),lalu ditambahkan dengan menggunakan fungsi $node->addChild(‘childname1’,’value1’),dimana $node adalah node baru yang akan dimasukkan,lalu ditutup dengan $xml->asXML($file); agar penambahan dapat dimasukkan ke file XML.
+Thread : Fortnite
+
+
+Lucky Setiawan
+Proposal
+Admin:
+Link ke page ini hanya muncul jika user memiliki type Admin yang dicek di session saat login. Page ini berisi perintah seperti menghapus komentar dan menampilkan data yang ada dalam database.
+PHP untuk membuat database dan tabel, register admin:
+File php ini dirun 1x di komputer / server baru agar websitenya dapat berfungsi, file ini berisi perintah membuat database, tabel, dan memasukkan username password admin. Karena member biasa tidak dapat mendaftar sebagai admin maka harus dimasukkan secara khusus.
+Pendaftaran Event:
+Pada page ini terdapat form pendaftaran dan list peserta yang telah mendaftar. List peserta didapatkan dengan membaca database dan memasukkan data tersebut dengan mysqli_num_rows setelah dipilah berdasarkan jenis event yang didaftarkan oleh peserta. Jika tidak ada maka tampilkan pesan bahwa peserta untuk event tersebut tidak ada.
+Menggunakan database untuk meregister input user ke dalam tabel participant. Setelah klik submit maka data akan di post ke php register_person. Dalam php tersebut dilakukan pengecekan apakah nickname tersebut sudah terdaftar dalam event yang dipilih di form sebelumnya.menggunakan mysqli_fetch_row. Hasil verifikasi akan disimpan dalam variabel $allowed. Jika allowed maka akan didaftarkan melalui mysqli_query dan menampilkan pesan berhasil. Jika tidak, maka tampilkan pesan nickname sudah diregister sehingga tidak dimasukkan kedalam database.
+About
+Thread CS:GO dan Minecraft
+
+
+Jedediah Fanuel
+Proposal
+Styling
+Navbar :
+Cara kerja nya ada di script,
+Jika button on click, maka id “mySidenav” width nya akan di tambah 250px.
+JIka button close on click, maka id”mySidenav” width nya akan diubah menjadi 0px.
+Registrasi :
+Mengambil data user yang diinput dari form, menggunakan php untuk menyimpan data ke variable, kemudian di insert ke query pada database
+Login :
+Melakukan log in dengan cara mengecek username dan password yang di input apakah match. 
+Session dan Cookie :
+Menyimpan data data user yang log in ke dalam variable superglobal session dan cookie.
+Logout :
+Melakukan session destroy, kemudian di direct ke halaman awal
+Forum :
+Menampilkan direct link game game yang sudah ditentukan.
+Thread Styling : 
+Masih berupa hardcode, karena memang tidak ada fungsi penambahan artikel.
+Comment di simpan pada file txt
+Thread : Ori and the Blind Forest dan World of Warships:
+Thread ini berisi artikel yang di hard code dan dibawahnya ada kolom diskusi yang dapat diisi. Isi diskusi disimpan dan dibaca melalui file txt.
+Admin :
+Cara kerja openDiv kurang lebih sama dengan cara kerja navbar.
+Delete comment
+Listing
+Feedback
+
+Fedly Septian
+Proposal
+Donate => Untuk setiap orang yang ingin memberi donasi berupa uang tunai untuk perkembangan web, cara kerjanya user masuk ke menu / page donate lalu akan ada pilihan mau donasi dengan identitas atau sebagai anonim (di klik salah satu pilihannya menggunakan link image ke page php lain) setelah klik, user akan ditujukan ke form pengisian data pendonasi dan upload bukti transfernya (akan menggunakan validasi supaya form terisi dengan benar semua), data tersebut menggunakan method=”POST” di formnya, lalu akan di proses inputan user tersebut di php untuk diambil datanya lalu disimpan ke dalam database pendonasi semua inputan user atau pendonasi tersebut. (untuk data nya ada contoh struktur tabel database diatas)
+//di form ada button untuk melihat kemana user harus transfer donasinya
+//file php ada 2 kondisi yaitu ketika user mau donasi menggunakan identitas atau sebagai anonym.
+//Page donate bersifat umum, jadi yang belum jadi member pun bisa donate, oleh karena itu harus isi form data yang lengkap lagi.
+Apa saja yang digunakan untuk page donate?
+Styling css //styling web
+Php //tampilan web dan pengambilan data dan connect serta insert data ke database
+Database : pendonasi=>penyimpanan data pendonasi
+Folder upload bukti transfer donasi untuk menyimpan foto bukti transfer donasi dari pendonasi //yang otomatis terisi ketika user mengupload foto menggunakan php dengan cara : 
+$dir = "../Upload_bukti_donasi/";
+            $foto = $dir.$_FILES['file']['name'];
+            $temp_file = $_FILES['file']['tmp_name'];
+            move_uploaded_file($temp_file, $foto);
+Merchandise => Page merchandise ini bersifat umum, semua orang yang mengakses web dapat membeli merchandise. Dalam page merchandise ada pilihan barang yang tersedia seperti nama barang, kode barang (akan ditampilkan kalau user seorang admin, jika member akan di hide), foto barang (akan diambil dari database), deskripsi produk, dan button buy now. Ketika klik buy now akan masuk ke page lain (linked) yang berisi form pembelian (untuk data pembeli, akan digunakan validasi supaya data terisi dengan benar semua) dan upload bukti transfer. Lalu akan ada button submit, ketika di klik akan di proses di php karena form menggunakan method=”POST”, di php akan dilakukan proses pengambilan data inputan user dan perhitungan total biaya berdasarkan barang yang dibeli dengan data yang ada di database (akan ada pengecekan jika saat mau beli barang tapi stok nya habis).
+//di form ada button untuk melihat kemana user harus transfer donasinya
+Apa saja yang digunakan di page merchandise?
+Styling css //untuk styling web
+Php //tampilan web dan pengambilan inputan user dan connect serta insert data ke database
+Database => 
+pembeli_merchandise=>penyimpanan data yang membeli merchandise
+stok_merchandise=>stok merchandise yang tersedia dan harganya.
+Folder upload bukti transfer untuk menyimpan foto bukti transfer pembeli merchandise. //yang otomatis terisi ketika user mengupload foto menggunakan php dengan cara : 
+$dir = "../Upload_bukti_pembelian/";
+            $foto = $dir.$_FILES['file']['name'];
+            $temp_file = $_FILES['file']['tmp_name'];
+            move_uploaded_file($temp_file, $foto);
+
+Thread : League of Legends dan Mobile Legends => Berisi artikel game dan space untuk member komentar dan saling berdiskusi mengenai forum tiap game, article berupa hardcode karena memang tidak ada penambahan article. Jika user menambahkan komentar maka akan ditampilkan juga di page forum thread game tersebut yang bisa dilihat semua orang untuk diskusi, comment berupa form dengan method=”POST” yang akan di proses di php dan comment tersebut akan disimpan ke dalam file txt.

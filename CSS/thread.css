@@ -1,0 +1,37 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.judul {
+	text-align: center;
+	font-size: 50px;
+}
+h1 {
+	font-size: 30px;
+}
+header{
+	height: 100px;
+	border-bottom: 1px solid #efefef;
+}
+article {
+	padding: 0 10% 0 10%;
+	text-align: justify;
+	border-bottom: 1px solid #efefef;
+}
+.comment {
+	text-align: center;
+	padding: 20px;
+}
+textarea {
+	background-color: transparent;
+	color: white;
+	padding: 5px;
+}
+.diskusi {
+	max-width: 100%;
+	display: block;
+}
+.diskusi > p {
+	overflow-wrap: break-word;
+}
