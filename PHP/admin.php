@@ -88,7 +88,7 @@ if (!isset($_SESSION['username'])) {
 
 <?php 
 
-	include 'adminFunctionDelete.php';
+	// include 'adminFunctionDelete.php';
 	include 'adminListing.php';
 
 ?>

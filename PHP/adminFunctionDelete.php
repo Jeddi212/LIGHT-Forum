@@ -293,13 +293,3 @@
 
 	</div>
 </div>
-
-<script>
-	function openDiv(ID) {
-		document.getElementById(ID).style.width = "100%";
-	}
-
-	function closeDiv(ID) {
-		document.getElementById(ID).style.width = "0";
-	}
-</script>
